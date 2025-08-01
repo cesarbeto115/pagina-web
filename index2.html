@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BD Sistemas</title>
+    <link rel="stylesheet" href="styles/index.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <img src="assets/logo3.png" width="100px">
+        <h1>BD Sistemas</h1>
+    </header>
+    
+    <div class="nav_menu">
+        <a href="index2.html">Inicio</a>
+        <a href="pag1.html">Bases de Datos</a>
+        <a href="pag2.html">Tipos de Lenguajes SQL</a>
+        <a href="pag3.html">Glosario de Comandos SQL</a>
+    </div>
+
+    <section id="objetivo">
+        <h2>Objetivo del Sitio</h2>
+        <p>
+            Brindar a los usuarios una comprensión clara y accesible sobre las bases de datos, sus tipos y los lenguajes 
+            utilizados para su gestión, a través de contenido estructurado que incluye explicaciones teóricas, ejemplos 
+            prácticos y un glosario de comandos SQL esenciales. El sitio tiene como finalidad facilitar el aprendizaje 
+            progresivo de conceptos fundamentales, permitiendo al usuario explorar desde definiciones básicas hasta 
+            ejemplos detallados de sentencias SQL, reforzando sus conocimientos mediante una interfaz visual, intuitiva 
+            y dinámica. Está dirigido especialmente a estudiantes, docentes o cualquier persona interesada en adquirir 
+            bases sólidas sobre el manejo de datos en entornos tecnológicos actuales.
+        </p>
+    </section>
+
+    <div class="botones">
+        <button id="boton-voz">Haz clic aquí para escuchar este texto</button>
+        <button id="detener-voz">Detener lectura</button>
+    </div>
+
+    <div class="img_vid">
+        <iframe style="width: 560px; height: 315px; margin-left: 2%; border-radius: 30px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);"
+            src="https://www.youtube.com/embed/knVwokXITGI?si=13UJEC0y__x22Xkx" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+
+        <img src="assets/imagen_2.png" style="background-color: white;">
+    </div>
+    
+    <script src="voz.js"></script>
+
+    <h3>Noticias Relevantes</h3>
+    <div class="noticias">
+        <div class="noticia1">
+            <img src="assets/noticia2.png" width="65%">
+            <p>
+                Descubre los sistemas de administracion de bases de datos más populares
+            </p>
+            <br>
+            <a href="https://www.stackscale.com/es/blog/sistemas-administracion-bases-datos-populares/" target="blank">Descubre más aquí</a>
+        </div>
+
+        <div class="noticia2">
+            <img src="assets/noticia4.png" width="80%" style="padding: 10%;">
+            <p>
+                Descubre las últimas noticias técnicas, artículos prácticos y buenas prácticas sobre Oracle Database
+            </p>
+            <br>
+            <a href="https://www.oracle.com/mx/database/newsletters/" target="blank">Descubre más aquí</a>
+        </div>
+
+        <div class="noticia3">
+            <img src="assets/noticia3.png" width="70%">
+            <p>
+                Descubre articulos sobre "Inyecciones SQL" y como prevenirlas
+            </p>
+            <br>
+            <a href="https://thehackernews-com.translate.goog/search/label/sql%20injection?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc" target="blank">Descubre más aquí</a>
+        </div>
+    </div>
+
+    <div class="bot">
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger
+            intent="WELCOME"
+            chat-title="BotBD"
+            agent-id="75c63c68-e9af-45f4-96c1-eeffda88e686"
+            language-code="es"
+        ></df-messenger>
+    </div>
+
+    <footer>
+        <div class="footer1_izq">
+            <div class="footer_1_p">
+                <p>
+                    Mis redes sociales:
+                </p>
+            </div>
+            <br>
+            <div class="footer1">
+                <a href="https://wa.me/528342891924?text=Hola%20quiero%20más%20información" target="blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/Cesarin.Serna" target="blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://github.com/cesarbeto115" target="blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/BetoSer90084540" target="blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/cesarhumbertoserna" target="blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer2">
+            <p style="font-size: 1.5rem;">Contacto: <br></p>
+            <a href="tel:+528342891924" target="blank"><i class="fas fa-phone-alt"></i>834-289-19-24</a><br>
+            <a href="mailto:cesarbetosc@gmail.com" class="correo_link" target="blank"><i class="fas fa-envelope"></i>cesarbetosc@gmail.com</a>
+        </div>
+    </footer>
+ 
+</body>
+</html>

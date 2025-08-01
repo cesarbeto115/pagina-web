@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BD Sistemas</title>
+    <link rel="stylesheet" href="styles/pag3.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
+</head>
+<body>
+    <header>
+        <img src="assets/logo3.png" width="100px">
+        <h1>BD Sistemas</h1>
+    </header>
+
+    <div class="nav_menu">
+        <a href="index2.html">Inicio</a>
+        <a href="pag1.html">Bases de Datos</a>
+        <a href="pag2.html">Tipos de Lenguajes SQL</a>
+        <a href="pag3.html">Glosario de Comandos SQL</a>
+    </div>
+
+    <section id="objetivo" class="glosario">
+        <h2>Glosario de Comandos SQL</h2><br><br>
+
+        <h3>Lenguaje de Definición de Datos (DDL)</h3><br>
+
+        <div class="comando">
+            <h4>CREATE</h4>
+            <p><strong>Descripción:</strong> Crea una base de datos o tabla.</p>
+            <p><strong>Ejemplo: </strong><code>CREATE TABLE empleados (id INT, nombre VARCHAR(50));</code></p>
+        </div>
+
+        <div class="comando">
+            <h4>ALTER</h4>
+            <p><strong>Descripción:</strong> Modifica la estructura de una tabla existente.</p>
+            <p><strong>Ejemplo: </strong><code>ALTER TABLE empleados ADD sueldo DECIMAL(10,2);</code></p>
+        </div>
+
+        <div class="comando">
+            <h4>DROP</h4>
+            <p><strong>Descripción:</strong> Elimina una tabla o base de datos.</p>
+            <p><strong>Ejemplo: </strong><code>DROP TABLE empleados;</code></p>
+        </div>
+
+        <div class="comando">
+            <h4>TRUNCATE</h4>
+            <p><strong>Descripción:</strong> Elimina todos los registros de una tabla sin borrar su estructura.</p>
+            <p><strong>Ejemplo: </strong><code>TRUNCATE TABLE empleados;</code></p>
+        </div>
+
+        <div class="comando">
+            <h4>RENAME</h4>
+            <p><strong>Descripción:</strong> Cambia el nombre de una tabla.</p>
+            <p><strong>Ejemplo: </strong><code>ALTER TABLE empleados RENAME TO trabajadores;</code></p>
+        </div><br><br>
+
+        <!-- DML -->
+        <h3>Lenguaje de Manipulación de Datos (DML)</h3><br>
+
+        <div class="comando">
+            <h4>SELECT</h4>
+            <p><strong>Descripción:</strong> Consulta datos de una tabla.</p>
+            <p><strong>Ejemplo: </strong><code>SELECT * FROM empleados;</code></p>
+        </div>
+
+        <div class="comando">
+            <h4>INSERT</h4>
+            <p><strong>Descripción:</strong> Inserta nuevos registros en una tabla.</p>
+            <p><strong>Ejemplo: </strong><code>INSERT INTO empleados (id, nombre) VALUES (1, 'Juan');</code></p>
+        </div>
+
+        <div class="comando">
+            <h4>UPDATE</h4>
+            <p><strong>Descripción:</strong> Modifica registros existentes.</p>
+            <p><strong>Ejemplo: </strong><code>UPDATE empleados SET nombre = 'Pedro' WHERE id = 1;</code></p>
+        </div>
+
+        <div class="comando">
+            <h4>DELETE</h4>
+            <p><strong>Descripción:</strong> Elimina registros de una tabla.</p>
+            <p><strong>Ejemplo: </strong><code>DELETE FROM empleados WHERE id = 1;</code></p>
+        </div><br><br>
+
+        <!-- DCL -->
+        <h3>Lenguaje de Control de Datos (DCL)</h3><br>
+
+        <div class="comando">
+            <h4>GRANT</h4>
+            <p><strong>Descripción:</strong> Otorga permisos a usuarios.</p>
+            <p><strong>Ejemplo: </strong><code>GRANT SELECT ON empleados TO usuario1;</code></p>
+        </div>
+
+        <div class="comando">
+            <h4>REVOKE</h4>
+            <p><strong>Descripción:</strong> Revoca permisos otorgados.</p>
+            <p><strong>Ejemplo: </strong><code>REVOKE SELECT ON empleados FROM usuario1;</code></p>
+        </div><br><br>
+
+        <!-- TCL -->
+        <h3>Lenguaje de Control de Transacciones (TCL)</h3><br>
+
+        <div class="comando">
+            <h4>COMMIT</h4>
+            <p><strong>Descripción:</strong> Guarda los cambios realizados.</p>
+            <p><strong>Ejemplo: </strong><code>COMMIT;</code></p>
+        </div>
+
+        <div class="comando">
+            <h4>ROLLBACK</h4>
+            <p><strong>Descripción:</strong> Revierte los cambios no confirmados.</p>
+            <p><strong>Ejemplo: </strong><code>ROLLBACK;</code></p>
+        </div>
+
+        <div class="comando">
+            <h4>SAVEPOINT</h4>
+            <p><strong>Descripción:</strong> Crea un punto de restauración.</p>
+            <p><strong>Ejemplo: </strong><code>SAVEPOINT punto1;</code></p>
+        </div>
+
+        <div class="comando">
+            <h4>SET TRANSACTION</h4>
+            <p><strong>Descripción:</strong> Define características de la transacción.</p>
+            <p><strong>Ejemplo: </strong><code>SET TRANSACTION READ ONLY;</code></p>
+        </div>
+    </section>
+
+    <div class="botones">
+        <button id="boton-voz">Haz clic aquí para escuchar este texto</button>
+        <button id="detener-voz">Detener lectura</button>
+    </div>
+    
+    <script src="voz.js"></script>
+
+    <div class="bot">
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger
+            intent="WELCOME"
+            chat-title="BotBD"
+            agent-id="75c63c68-e9af-45f4-96c1-eeffda88e686"
+            language-code="es"
+        ></df-messenger>
+    </div>
+
+    <footer>
+        <div class="footer1_izq">
+            <div class="footer_1_p">
+                <p>
+                    Mis redes sociales:
+                </p>
+            </div>
+            <br>
+            <div class="footer1">
+                <a href="https://wa.me/528342891924?text=Hola%20quiero%20más%20información" target="blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/Cesarin.Serna" target="blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://github.com/cesarbeto115" target="blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/BetoSer90084540" target="blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/cesarhumbertoserna" target="blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer2">
+            <p style="font-size: 1.5rem;">Contacto: <br></p>
+            <a href="tel:+528342891924" target="blank"><i class="fas fa-phone-alt"></i>834-289-19-24</a><br>
+            <a href="mailto:cesarbetosc@gmail.com" class="correo_link" target="blank"><i class="fas fa-envelope"></i>cesarbetosc@gmail.com</a>
+        </div>
+    </footer>
+</body>
+</html>

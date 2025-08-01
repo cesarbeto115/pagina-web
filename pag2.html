@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BD Sistemas</title>
+    <link rel="stylesheet" href="styles/pag2.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <img src="assets/logo3.png" width="100px">
+        <h1>BD Sistemas</h1>
+    </header>
+
+    <div class="nav_menu">
+        <a href="index2.html">Inicio</a>
+        <a href="pag1.html">Bases de Datos</a>
+        <a href="pag2.html">Tipos de Lenguajes SQL</a>
+        <a href="pag3.html">Glosario de Comandos SQL</a>
+    </div>
+
+    <div id="objetivo">
+        <section><br>
+            <h1>Tipos de Lenguajes SQL</h1><br>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Nombre</th>
+                        <th>Comandos Principales</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td>DDL</td>
+                        <td>Definición de Datos</td>
+                        <td><code>CREATE</code>, <code>ALTER</code>, <code>DROP</code></td>
+                        <td><code>CREATE TABLE empleados (id INT, nombre TEXT);</code></td>
+                    </tr>
+                    <tr>
+                        <td>DML</td>
+                        <td>Manipulación de Datos</td>
+                        <td><code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code></td>
+                        <td><code>INSERT INTO empleados (id, nombre) VALUES (1, 'Ana');</code></td>
+                    </tr>
+                    <tr>
+                        <td>DCL</td>
+                        <td>Control de Acceso</td>
+                        <td><code>GRANT</code>, <code>REVOKE</code></td>
+                        <td><code>GRANT SELECT ON empleados TO usuario1;</code></td>
+                    </tr>
+                    <tr>
+                        <td>TCL</td>
+                        <td>Control de Transacciones</td>
+                        <td><code>BEGIN</code>, <code>COMMIT</code>, <code>ROLLBACK</code></td>
+                        <td><code>BEGIN; UPDATE empleados SET nombre='Luis'; COMMIT;</code></td>
+                    </tr>
+                </tbody>
+            </table>   
+        </section>
+
+        <aside>
+            <h2>Ejemplos detallados</h2>
+
+            <h3>DDL – Definición de Datos</h3>
+            <pre><code>CREATE TABLE empleados (
+            id INT PRIMARY KEY,
+            nombre TEXT,
+            edad INT
+            );</code></pre>
+
+            <div class="ddl">
+                <p>
+                    Este comando crea una nueva tabla llamada empleados con tres columnas:
+                    <br>
+                    <code> id:</code> un número entero que funciona como clave primaria (no se repite).
+                    <br>
+                    <code> nombre:</code> un texto para el nombre del empleado.
+                    <br>
+                    <code> edad:</code> un número entero para la edad del empleado.
+                </p>
+            </div>
+            <br><br>
+
+            <h3>DML – Manipulación de Datos</h3>
+            <pre><code>
+            -- Insertar
+            INSERT INTO empleados (id, nombre, edad) VALUES (1, 'Ana', 30);
+
+            -- Consultar
+            SELECT * FROM empleados;
+
+            -- Actualizar
+            UPDATE empleados SET edad = 31 WHERE id = 1;
+
+            -- Eliminar
+            DELETE FROM empleados WHERE id = 1;
+            </code></pre>
+
+            <div class="dml">
+                <div class="p1">
+                    <p>
+                        -- Insertar --<br>
+                        Agrega un nuevo registro a la tabla <code>empleados</code> con:<br>
+                        <code>id:</code> 1, 
+                        <code>nombre:</code> Ana, 
+                        <code>edad:</code> 30
+                    </p>
+                </div>
+
+                <div class="p2">
+                    <p>
+                        -- Consultar --<br>
+                        Consulta todos los registros de la tabla <code>empleados</code> . El <code>*</code> significa que traerá todas las columnas.
+                    </p>
+                </div>
+
+                <div class="p3">
+                    <p>
+                        -- Actualizar --<br>
+                        Modifica el valor de la columna <code>edad</code> a 31 para el empleado cuyo <code>id</code> es 1.
+                    </p>
+                </div>
+
+                <div class="p4">
+                    <p>
+                        -- Eliminar --<br>
+                        Elimina el registro del empleado cuyo <code>id</code> es 1.
+                    </p>
+                </div>
+            </div>
+            <br><br>
+
+            <h3>DCL – Control de Acceso</h3>
+            <pre><code>       GRANT SELECT, INSERT ON empleados TO usuario1;
+            REVOKE INSERT ON empleados FROM usuario1;
+            </code></pre>
+
+            <div class="dcl">
+                <p>
+                    Da permisos al usuario llamado <code>usuario1</code> para que pueda consultar <code>(SELECT)</code> 
+                    e insertar <code>(INSERT)</code> datos en la tabla <code>empleados</code>.<br>
+                    Revoca (quita) al usuario <code>usuario1</code> el permiso de insertar registros en la 
+                    tabla <code>empleados</code>.
+                </p>
+            </div><br><br>
+            
+
+            <h3>TCL – Control de Transacciones</h3>
+            <pre><code>BEGIN;
+
+                UPDATE empleados SET edad = 35 WHERE nombre = 'Luis';
+
+                -- Si todo está bien:
+                COMMIT;
+
+                -- Si algo sale mal:
+                //ROLLBACK;
+            </code></pre>
+
+            <div class="tcl">
+                <li><code>BEGIN</code> inicia una transacción.<br></li>
+                <li>Luego actualiza la edad del empleado llamado Luis a 35.<br></li>
+                <li>Si no ocurre ningún error, <code>COMMIT</code> guarda permanentemente los cambios.<br></li>
+                <li>Si algo sale mal, ROLLBACK revierte todos los cambios hechos desde <code>BEGIN</code>.<br></li><br>
+                <p> 
+                    Esto es útil para mantener la integridad de los datos, especialmente si hay varias operaciones que deben completarse juntas.
+                </p>
+            </div>
+        </aside>
+    </div>
+
+    <div class="botones">
+        <button id="boton-voz">Haz clic aquí para escuchar este texto</button>
+        <button id="detener-voz">Detener lectura</button>
+    </div>
+    
+    <script src="voz.js"></script>
+    
+    <div class="bot">
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger
+            intent="WELCOME"
+            chat-title="BotBD"
+            agent-id="75c63c68-e9af-45f4-96c1-eeffda88e686"
+            language-code="es"
+        ></df-messenger>
+    </div>
+
+    <footer>
+        <div class="footer1_izq">
+            <div class="footer_1_p">
+                <p>
+                    Mis redes sociales:
+                </p>
+            </div>
+            <br>
+            <div class="footer1">
+                <a href="https://wa.me/528342891924?text=Hola%20quiero%20más%20información" target="blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/Cesarin.Serna" target="blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://github.com/cesarbeto115" target="blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/BetoSer90084540" target="blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/cesarhumbertoserna" target="blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer2">
+            <p style="font-size: 1.5rem;">Contacto: <br></p>
+            <a href="tel:+528342891924" target="blank"><i class="fas fa-phone-alt"></i>834-289-19-24</a><br>
+            <a href="mailto:cesarbetosc@gmail.com" class="correo_link" target="blank"><i class="fas fa-envelope"></i>cesarbetosc@gmail.com</a>
+        </div>
+    </footer>
+</body>
+</html>
